@@ -3,17 +3,17 @@
 {% load i18n %}
 {% block title %}{% trans 'Vendor admin' %}{% endblock %}
 {% block content%}
-    <div class="box">
+    <div class="box" class="col-sm-5" style="background:#eaeaea">
         <h1> Vendor admin -{{ vendor.nom }}</h1>
         <strong>My balance :</strong> {{ vendor.get_balance }} FCFA<br>
          <strong>My paid amount: </strong> {{ vendor.get_paid_amount }} FCFA
         <hr>
-        <a href="{% url 'edit_vendor' %}"class="button is-info is-uppercase">Edit</a>
-        <a href="{% url 'logout' %}" class="btn-danger"> Log out </a>
+        <button class="button btn-success" ><a href="{% url 'edit_vendor' %}"><span class="glyphicon-edit">Edit</span></a></button>
+        <button class="button btn-warning"><a href="{% url 'logout' %}" > <span class="glyphicon-backward">Log out</span></a></button>
     </div>
-    <div class="box">
+    <div class="box" style="background:azure">
         <h2 class="is-size-3 mb-4">My products</h2>
-        <a href="{% url 'add_product' %}" class="btn-success is-uppercase mb-6" >Add new product</a>
+        <button class="btn-success"> <a href="{% url 'add_product' %}">Add new product</a></button>
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
@@ -40,7 +40,7 @@
         {% endif %}
     </div>
 
-      <div class="box">
+      <div class="box" style="background:#f8f9fa">
         <h2 class="is-size-3 mb-4">My orders</h2>
 
     {% if orders %}
@@ -85,7 +85,7 @@
             </div>
         {% endfor %}
     {% endif %}
-        <a href="{% url 'add_product' %}" class="btn-success is-uppercase mb-6" >Add new product</a>
+       <button class="btn-primary"><a href="{% url 'add_product' %}"  >Add new product</a></button>
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
