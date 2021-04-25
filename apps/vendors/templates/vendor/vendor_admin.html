@@ -8,12 +8,12 @@
         <strong>My balance :</strong> {{ vendor.get_balance }} FCFA<br>
          <strong>My paid amount: </strong> {{ vendor.get_paid_amount }} FCFA
         <hr>
-        <button class="button btn-success" ><a href="{% url 'edit_vendor' %}"><span class="glyphicon-edit">Edit</span></a></button>
-        <button class="button btn-warning"><a href="{% url 'logout' %}" > <span class="glyphicon-backward">Log out</span></a></button>
+        <button class="button btn-close-white" ><a href="{% url 'edit_vendor' %}"></a><span>Edit</span></button>
+        <button class="button btn-warning"><a href="{% url 'logout' %}" ></a> <span>Log out</span></button>
     </div>
     <div class="box" style="background:azure">
         <h2 class="is-size-3 mb-4">My products</h2>
-        <button class="btn-success"> <a href="{% url 'add_product' %}">Add new product</a></button>
+        <button class="btn-danger"> <a href="{% url 'add_product' %}">Add new product</a></button>
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
@@ -85,7 +85,7 @@
             </div>
         {% endfor %}
     {% endif %}
-       <button class="btn-primary"><a href="{% url 'add_product' %}"  >Add new product</a></button>
+       <button class="btn-dark"><a href="{% url 'add_product' %}"  >Add new product</a></button>
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
