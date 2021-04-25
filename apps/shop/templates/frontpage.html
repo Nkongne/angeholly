@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %} Welcome{% endblock %}
+{% block content %}
+        <div class="columns is-multiline mb-6">
+            <div class="column is-12 has-text-centered mt-6 mb-6">
+                <h2 class="is-size-3">Newest products </h2>
+            </div>
+        {% for p in newest_product %}
+              {% include 'product/parts/list_items.html' %}
+        {% endfor %}
+        </div>
+{% endblock %}

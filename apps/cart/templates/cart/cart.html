@@ -1,0 +1,189 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+<title>{% trans "Cart"  %}</title>
+    <script src="https://js.stripe.com/v3/"></script>
+
+        <div class="single-sidebar">
+                          <h2 class="sidebar-title">{%trans 'Search Products'%}</h2>
+                          <form method="get" action="{% url 'search' %}">
+                            <input type="text" class="input" placeholder="Search..."name="query">
+                              <input type="submit" value="search">
+                        </form>
+                    </div>
+{% if cart %}
+
+    <div class="box mb-6">
+        <div class="table">
+            <table class="table is-fullwidth is-striped">
+                <thead>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </thead>
+                <tbody>
+                    {% for item in cart %}
+                        <tr>
+                            <td>
+                                <figure class="image is-64x64">
+                                    <img src="{{ item.product.get_thumbnail }}">
+                                </figure>
+                            </td>
+                            <td>
+                                <a href="{% url 'product' item.product.category.slug item.product.slug %}">{{ item.product.title }}</a>
+                            </td>
+                            <td>
+                                {{ item.quantity }}
+                                <a href="?change_quantity={{ item.id }}&quantity=-1">-</a>
+                                <a href="?change_quantity={{ item.id }}&quantity=1">+</a>
+                            </td>
+                            <td>
+                                {{ item.total_price }} FCFA
+                            </td>
+                            <td>
+                                <a href="?remove_from_cart={{ item.id }}" class="delete">Remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><strong>Total Cost</strong></td>
+                        <td><strong>{{ cart|length }}</strong></td>
+                        <td colspan="2"><strong>{{ cart.get_total_cost }}   FCFA</strong></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+    <h2 class="subtitle">Contact information</h2>
+    <form method="post" action="." id="payment-form">{% csrf_token %}
+        {% if form.non_field_errors %}
+            <div class="notification is-danger">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        {% if form.errors  %}
+                 <div class="notification is-danger">
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}</strong>:{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                 </div>
+
+        {% endif %}
+        <div class="columns">
+            <div class="columns is-6">
+                <div class="field">
+                    <label>Nom</label>
+                    <div class="control">
+                        <input class="input" type="text" name="nom">
+                    </div>
+                </div>
+                <div class="field">
+                        <label>Prenom</label>
+                        <div class="control">
+                            <input class="input" type="text" name="prenom">
+                        </div>
+                </div>
+               <div class="field">
+                        <label>Email</label>
+                        <div class="control">
+                            <input class="input" type="text" name="email">
+                        </div>
+                </div>
+                <div class="field">
+                        <label>Phone</label>
+                        <div class="control">
+                            <input class="input" type="text" name="phone">
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-6">
+                <div class="field">
+                    <label>Address</label>
+                        <div class="control">
+                            <input class="input" type="text" name="address">
+                        </div>
+                </div>
+                <div class="field">
+                    <label>Zip code</label>
+                        <div class="control">
+                            <input class="input" type="text" name="zipcode">
+                        </div>
+                </div>
+                <div class="field">
+                    <label>Place</label>
+                        <div class="control">
+                            <input class="input" type="text" name="place">
+                        </div>
+                </div>
+            </div>
+
+      <h2 class="subtitle">Payment information</h2>
+            <div id="card-element">
+
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="notification is-danger">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+    <div class="field">
+        <div class="contriol">
+            <button class="button is-dark mt-4">Checkout</button>
+        </div>
+    </div>
+        </div>
+    </form>
+{% else %}
+    <p>you don't have any product in your cart</p>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+
+    <script>
+    var stripe=Stripe('{{ stripe_pub_key }}');
+    var elements = stripe.elements();
+    var card= elements.create('card');
+    card.mount('#card-element');
+
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit',function (event) {
+        event.preventDefault();
+
+        stripe.createToken(card).then(function (result) {
+            if (result.error){
+                var errorElement=document.getElementById('card-errors');
+                errorElement.textContent=result.error.message;
+            }else{
+
+                stripeTokenHandler(result.token);
+            }
+
+
+        });
+
+    });
+    function stripeTokenHandler(token){
+        var form=document.getElementById('payment-form');
+        var hiddenInput=document.createElement('input');
+        hiddenInput.setAttribute('type','hidden');
+        hiddenInput.setAttribute('name','stripe_token');
+        hiddenInput.setAttribute('value',token.id);
+        form.appendChild(hiddenInput);
+
+        form.submit();
+
+    }
+    </script>
+
+{% endblock %}

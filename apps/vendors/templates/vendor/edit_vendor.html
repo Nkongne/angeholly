@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block title %}Edit vendor{% endblock %}
+{% block vendor %}
+    <h1 class="title">Edit vendor</h1>
+    <form method="post" action=".">{% csrf_token %}
+    <div class="field">
+        <label>Vendor Name</label>
+        <div class="control-label">
+            <input type="text" name="name" id="id_name" value="{{ vendor.nom }}"class="input">
+        </div>
+        <p class="help">This is not the same as the username!</p>
+    </div>
+    <div class="field">
+        <label>Email</label>
+        <div class="control-label">
+            <input type="email" name="email" id="id_email" value="{{ vendor.cree_par }}"class="input">
+        </div>
+
+    </div>
+    <div class="field">
+
+        <div class="control-label">
+            <button class="button is-dark is-uppercase">Save changes</button>
+        </div>
+
+    </div>
+    </form>
+{% endblock %}

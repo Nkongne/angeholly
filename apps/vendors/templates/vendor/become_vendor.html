@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Become a vendor' %}{% endblock %}
+{% block vendor%}<h1> {% trans 'Become vendor' %} </h1>
+ <form class="form-horizontal" role="form" method="POST" id="af" action=".">{% csrf_token %}
+
+        <div class="form-group">
+
+            <div class="col-lg-10">
+            {{form.as_p}}
+           </div>
+
+      <div class="col-lg-10">
+        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+        </div>
+
+         </div>
+
+    </form>
+    <hr>
+    <div class="form-group">
+
+            <div class="col-lg-10">
+        <h2 class="subtitle">  already have an account ? </h2>
+        <a href="{% url 'login' %}">Login</a>
+            </div>
+    </div>
+{% endblock %}
