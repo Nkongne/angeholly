@@ -1145,7 +1145,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 
 }
-
+div.row{
+     display: block;
+    text-align: center;
+}
 .row{
     display: block;
     margin-left: auto;

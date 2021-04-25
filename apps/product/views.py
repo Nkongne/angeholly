@@ -29,9 +29,11 @@ def product(request,product_slug,category_slug):
     if len(similar_products) >= 4:
         similar_products=random.sample(similar_products,4)
     return render(request,'product/product.html',{'form':form,'prod':product,'similar_products':similar_products})
+
 def cat(request,category_slug):
     category=get_object_or_404(Category,slug=category_slug)
-    return render(request, 'product/category.html',{'category':category})
+    return render(request,'product/category.html',{'category':category})
+
 def search(request):
     query=request.GET.get('query','')
     products=Product.objects.filter(Q(title__icontains=query)| Q(description__icontains=query))
