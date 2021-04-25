@@ -2,6 +2,7 @@
 {% load i18n %}
 {% block title %}{% trans 'Add product' %}{% endblock %}
 {% block product%}<h1> {% trans 'Add new product' %} </h1>
+
     <div class="row">
     <div class="col-sm-5" style="background:#eaeaea">
     <div class="panel-body">
@@ -37,10 +38,15 @@
            </div>
              </div>
 
-             <div class="col-lg-10">
-                <span class="glyphicon glyphicon-save"><input type="submit" value="Enregistrer" class="btn btn-success"/></span>
+                  <div class="form-group">
+             <div class="col-lg-2 col-sm-2 ">
+
                 <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler <span class="glyphicon glyphicon-backward"></span></button>
              </div>
+                      <div class="col-lg-10">
+                <button type="submit" class="btn-success">Enregistrer <span class="glyphicon glyphicon-save"></span></button>
+                    </div>
+                  </div>
         </div>
 
 
