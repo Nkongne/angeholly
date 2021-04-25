@@ -20,7 +20,7 @@
         {% endfor %}
 
     {% endif %}
-    <form method="post" action=".">
+
     {% csrf_token %}
         <div class="field has-addons">
             <div class="control">
@@ -33,6 +33,7 @@
         </div>
 
     </form>
+
     {% if similar_products %}
         <hr>
             <div class="column is-multiline">
