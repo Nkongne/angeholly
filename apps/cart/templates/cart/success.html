@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{{product.title }}{% endblock %}
+{% block content %}
+
+    <div class="container-md">
+        <h1 class="title"> {% trans 'Thanks for the order' %}</h1>
+    </div>
+{% endblock %}

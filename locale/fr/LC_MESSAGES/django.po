@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 13:12+0100\n"
+"POT-Creation-Date: 2021-05-01 06:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,177 +19,145 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: angeholly/settings.py:110
+#: angeholly/settings.py:132
 msgid "English"
 msgstr "Anglais"
 
-#: angeholly/settings.py:111
+#: angeholly/settings.py:133
 msgid "German"
 msgstr "Allemand"
 
-#: angeholly/settings.py:112
+#: angeholly/settings.py:134
 msgid "French"
 msgstr "Francais"
 
-#: apps/shop/templates/index.html:47 apps/shop/templates/index.html:528
-#: apps/shop/templates/shop/cart.html:624
-#: apps/shop/templates/shop/checkout.html:1035
-#: apps/shop/templates/shop/shop.html:395
-#: apps/shop/templates/shop/single-product.html:417
-#, fuzzy
-#| msgid "My Account"
-msgid "My account"
-msgstr "Mon compte"
-
-#: apps/shop/templates/index.html:48 apps/shop/templates/index.html:530
-#: apps/shop/templates/shop/cart.html:626
-#: apps/shop/templates/shop/checkout.html:48
-#: apps/shop/templates/shop/checkout.html:1037
-#: apps/shop/templates/shop/shop.html:48 apps/shop/templates/shop/shop.html:397
-#: apps/shop/templates/shop/single-product.html:48
-#: apps/shop/templates/shop/single-product.html:419
-msgid "Wishlist"
-msgstr "ma liste preferee"
-
-#: apps/shop/templates/index.html:49 apps/shop/templates/shop/cart.html:51
-#: apps/shop/templates/shop/checkout.html:49
-#: apps/shop/templates/shop/shop.html:49
-#: apps/shop/templates/shop/single-product.html:49
-msgid "My Cart"
-msgstr "Ma Carte bancaire"
-
-#: apps/shop/templates/index.html:50 apps/shop/templates/index.html:141
-#: apps/shop/templates/shop/cart.html:52 apps/shop/templates/shop/cart.html:135
-#: apps/shop/templates/shop/cart.html:268
-#: apps/shop/templates/shop/checkout.html:14
-#: apps/shop/templates/shop/checkout.html:50
-#: apps/shop/templates/shop/checkout.html:136
-#: apps/shop/templates/shop/shop.html:50 apps/shop/templates/shop/shop.html:133
-#: apps/shop/templates/shop/single-product.html:50
-#: apps/shop/templates/shop/single-product.html:134
-msgid "Checkout"
-msgstr "Verifier un paiement"
-
-#: apps/shop/templates/index.html:51 apps/shop/templates/shop/cart.html:53
-#: apps/shop/templates/shop/checkout.html:51
-#: apps/shop/templates/shop/shop.html:51
-#: apps/shop/templates/shop/single-product.html:51
-msgid "Login"
-msgstr "Se connecter"
-
-#: apps/shop/templates/index.html:60 apps/shop/templates/shop/cart.html:62
-msgid "currency "
-msgstr "devise"
-
-#: apps/shop/templates/index.html:74 apps/shop/templates/shop/cart.html:71
-#: apps/shop/templates/shop/checkout.html:71
-#: apps/shop/templates/shop/shop.html:69
-#: apps/shop/templates/shop/single-product.html:69
-msgid "Choose language"
-msgstr "Choisir une langue"
-
-#: apps/shop/templates/index.html:117
-#: apps/shop/templates/shop/single-product.html:109
-#, fuzzy
-#| msgid "Cart"
-msgid "Cart "
-msgstr "Carte"
-
-#: apps/shop/templates/index.html:137 apps/shop/templates/shop/cart.html:131
-#: apps/shop/templates/shop/checkout.html:132
-#: apps/shop/templates/shop/shop.html:129
-#: apps/shop/templates/shop/single-product.html:130
-#: apps/shop/templates/shop/single-product.html:217
-msgid "Home"
-msgstr "Acceuil"
-
-#: apps/shop/templates/index.html:138 apps/shop/templates/shop/cart.html:132
-#: apps/shop/templates/shop/checkout.html:133
-#: apps/shop/templates/shop/shop.html:130
-#: apps/shop/templates/shop/single-product.html:131
-msgid "Shop page"
-msgstr "Ventes"
-
-#: apps/shop/templates/index.html:139 apps/shop/templates/shop/cart.html:133
-#: apps/shop/templates/shop/checkout.html:134
-#: apps/shop/templates/shop/shop.html:131
-#: apps/shop/templates/shop/single-product.html:132
-msgid "Single product"
-msgstr "Article"
-
-#: apps/shop/templates/index.html:140 apps/shop/templates/shop/cart.html:111
+#: apps/cart/templates/cart/cart.html:7 apps/shop/templates/index.html:167
+#: apps/shop/templates/shop/base.html:140
+#: apps/shop/templates/shop/cart.html:111
 #: apps/shop/templates/shop/cart.html:134
 #: apps/shop/templates/shop/checkout.html:112
 #: apps/shop/templates/shop/checkout.html:135
 #: apps/shop/templates/shop/shop.html:109
-#: apps/shop/templates/shop/shop.html:132
+#: apps/shop/templates/shop/shop.html:144
 #: apps/shop/templates/shop/single-product.html:133
 msgid "Cart"
 msgstr "Carte"
 
-#: apps/shop/templates/index.html:142 apps/shop/templates/shop/cart.html:136
-#: apps/shop/templates/shop/checkout.html:137
-#: apps/shop/templates/shop/shop.html:134
-#: apps/shop/templates/shop/single-product.html:135
-msgid "Category"
+#: apps/cart/templates/cart/cart.html:19 apps/shop/templates/shop/cart.html:230
+#: apps/shop/templates/shop/checkout.html:928
+#: apps/shop/templates/shop/single-product.html:14
+msgid "Product"
+msgstr "Article"
+
+#: apps/cart/templates/cart/cart.html:20 apps/shop/templates/shop/cart.html:232
+msgid "Quantity"
+msgstr "Quantite"
+
+#: apps/cart/templates/cart/cart.html:21 apps/shop/templates/shop/cart.html:231
+#: apps/vendors/templates/vendor/add_product.html:29
+#: apps/vendors/templates/vendor/vendor_admin.html:22
+#: apps/vendors/templates/vendor/vendor_admin.html:63
+#: apps/vendors/templates/vendor/vendor_admin.html:94
+msgid "Price"
+msgstr "Prix"
+
+#: apps/cart/templates/cart/cart.html:44
+msgid "Remove"
+msgstr ""
+
+#: apps/cart/templates/cart/cart.html:52
+msgid "Total Cost"
+msgstr ""
+
+#: apps/cart/templates/cart/cart.html:66
+msgid "Contact information"
+msgstr ""
+
+#: apps/cart/templates/cart/cart.html:89
+#: apps/shop/templates/shop/checkout.html:526
+#: apps/shop/templates/shop/checkout.html:858
+msgid "First Name"
+msgstr "Nom"
+
+#: apps/cart/templates/cart/cart.html:95
+#, fuzzy
+#| msgid "Category"
+msgid "Last name"
 msgstr "Categorie"
 
-#: apps/shop/templates/index.html:143 apps/shop/templates/shop/cart.html:137
-#: apps/shop/templates/shop/checkout.html:138
-#: apps/shop/templates/shop/shop.html:135
-#: apps/shop/templates/shop/single-product.html:136
-msgid "Others"
-msgstr "Autres"
-
-#: apps/shop/templates/index.html:144 apps/shop/templates/shop/cart.html:138
-msgid "Contact"
-msgstr "Contact"
-
-#: apps/shop/templates/index.html:162 apps/shop/templates/index.html:171
-#: apps/shop/templates/index.html:180 apps/shop/templates/index.html:189
-msgid "Shop now"
-msgstr "Aller a la boutique"
-
-#: apps/shop/templates/index.html:179
-msgid "Select Item"
-msgstr "Selectionner un article"
-
-#: apps/shop/templates/index.html:204
-msgid "30 Days return"
-msgstr "Retourner dans 30 jours"
-
-#: apps/shop/templates/index.html:210
-msgid "Free shipping"
-msgstr "Expedition gratuit"
-
-#: apps/shop/templates/index.html:216
-msgid "Secure payments"
-msgstr "Payements securises"
-
-#: apps/shop/templates/index.html:222
+#: apps/cart/templates/cart/cart.html:108
+#: apps/vendors/templates/vendor/vendor_admin.html:58
 #, fuzzy
-#| msgid "Single product"
-msgid "New products"
-msgstr "Nouveau Articles"
+#| msgid "Phone "
+msgid "Phone"
+msgstr "Numero de telephone"
 
-#: apps/shop/templates/index.html:235
-msgid "Latest Products"
-msgstr "Derniers Nouveautes"
+#: apps/cart/templates/cart/cart.html:115
+#: apps/shop/templates/shop/checkout.html:544
+#: apps/vendors/templates/vendor/vendor_admin.html:55
+msgid "Address"
+msgstr "Adresse"
 
-#: apps/shop/templates/index.html:241 apps/shop/templates/index.html:256
-#: apps/shop/templates/index.html:270 apps/shop/templates/index.html:285
-#: apps/shop/templates/shop/shop.html:171
-#: apps/shop/templates/shop/shop.html:186
-#: apps/shop/templates/shop/shop.html:201
-#: apps/shop/templates/shop/shop.html:216
-#: apps/shop/templates/shop/shop.html:231
-#: apps/shop/templates/shop/shop.html:246
-#: apps/shop/templates/shop/shop.html:261
-#: apps/shop/templates/shop/shop.html:276
-#: apps/shop/templates/shop/shop.html:291
-#: apps/shop/templates/shop/shop.html:306
-#: apps/shop/templates/shop/shop.html:321
-#: apps/shop/templates/shop/shop.html:336
+#: apps/cart/templates/cart/cart.html:121
+#, fuzzy
+#| msgid "Coupon code"
+msgid "Zip code"
+msgstr "code coupon"
+
+#: apps/cart/templates/cart/cart.html:127
+msgid "Place"
+msgstr ""
+
+#: apps/cart/templates/cart/cart.html:140
+msgid "Payment information"
+msgstr ""
+
+#: apps/cart/templates/cart/cart.html:151
+#, fuzzy
+#| msgid "Checkout"
+msgid "Checkout "
+msgstr "Verifier un paiement"
+
+#: apps/cart/templates/cart/cart.html:171
+msgid "you don't have any product in your cart "
+msgstr ""
+
+#: apps/cart/templates/cart/success.html:8
+msgid "Thanks for the order"
+msgstr ""
+
+#: apps/product/templates/product/parts/list_items.html:11
+#, fuzzy
+#| msgid "See details"
+msgid "view detail"
+msgstr "details"
+
+#: apps/product/templates/product/product.html:14
+#: apps/shop/templates/shop/single-product.html:270
+#: apps/vendors/templates/vendor/vendor_admin.html:54
+msgid "Name"
+msgstr "Nom"
+
+#: apps/product/templates/product/product.html:18
+#: apps/shop/templates/index.html:68
+#, fuzzy
+#| msgid "Vendor contact"
+msgid "Vendor"
+msgstr "Contact du vendeur"
+
+#: apps/product/templates/product/product.html:20
+#: apps/vendors/templates/vendor/add_product.html:24
+#, fuzzy
+#| msgid "Product Description"
+msgid "Description"
+msgstr "Description de l'article"
+
+#: apps/product/templates/product/product.html:37
+#: apps/shop/templates/index.html:293 apps/shop/templates/index.html:307
+#: apps/shop/templates/index.html:322 apps/shop/templates/shop/base.html:241
+#: apps/shop/templates/shop/base.html:256
+#: apps/shop/templates/shop/base.html:270
+#: apps/shop/templates/shop/base.html:285
 #: apps/shop/templates/shop/single-product.html:248
 #: apps/shop/templates/shop/single-product.html:302
 #: apps/shop/templates/shop/single-product.html:317
@@ -200,8 +168,195 @@ msgstr "Derniers Nouveautes"
 msgid "Add to cart"
 msgstr "Ajouter au panier"
 
-#: apps/shop/templates/index.html:242 apps/shop/templates/index.html:257
-#: apps/shop/templates/index.html:271 apps/shop/templates/index.html:286
+#: apps/product/templates/product/product.html:47
+#, fuzzy
+#| msgid "Single product"
+msgid "Similar products"
+msgstr "Article"
+
+#: apps/product/templates/product/search.html:25
+#: apps/shop/templates/shop/cart.html:171
+#: apps/shop/templates/shop/single-product.html:166
+msgid "Search"
+msgstr "Rechercher"
+
+#: apps/product/templates/product/search.html:26
+#, fuzzy
+#| msgid "Single product"
+msgid "Search terms"
+msgstr "Recherche des articles"
+
+#: apps/shop/templates/index.html:59 apps/shop/templates/index.html:565
+#: apps/shop/templates/shop/base.html:47 apps/shop/templates/shop/base.html:528
+#: apps/shop/templates/shop/cart.html:630
+#: apps/shop/templates/shop/checkout.html:1035
+#: apps/shop/templates/shop/shop.html:244
+#: apps/shop/templates/shop/single-product.html:417
+#, fuzzy
+#| msgid "My Account"
+msgid "My account"
+msgstr "Mon compte"
+
+#: apps/shop/templates/index.html:60 apps/shop/templates/index.html:567
+#: apps/shop/templates/shop/base.html:48 apps/shop/templates/shop/base.html:530
+#: apps/shop/templates/shop/cart.html:632
+#: apps/shop/templates/shop/checkout.html:48
+#: apps/shop/templates/shop/checkout.html:1037
+#: apps/shop/templates/shop/shop.html:48 apps/shop/templates/shop/shop.html:246
+#: apps/shop/templates/shop/single-product.html:48
+#: apps/shop/templates/shop/single-product.html:419
+msgid "Wishlist"
+msgstr "ma liste preferee"
+
+#: apps/shop/templates/index.html:61 apps/shop/templates/shop/base.html:49
+#: apps/shop/templates/shop/cart.html:51
+#: apps/shop/templates/shop/checkout.html:49
+#: apps/shop/templates/shop/shop.html:49
+#: apps/shop/templates/shop/single-product.html:49
+msgid "My Cart"
+msgstr "Ma Carte bancaire"
+
+#: apps/shop/templates/index.html:62
+msgid "carte"
+msgstr ""
+
+#: apps/shop/templates/index.html:63 apps/shop/templates/index.html:168
+#: apps/shop/templates/shop/base.html:50 apps/shop/templates/shop/base.html:141
+#: apps/shop/templates/shop/cart.html:52 apps/shop/templates/shop/cart.html:135
+#: apps/shop/templates/shop/cart.html:274
+#: apps/shop/templates/shop/checkout.html:14
+#: apps/shop/templates/shop/checkout.html:50
+#: apps/shop/templates/shop/checkout.html:136
+#: apps/shop/templates/shop/shop.html:50 apps/shop/templates/shop/shop.html:145
+#: apps/shop/templates/shop/single-product.html:50
+#: apps/shop/templates/shop/single-product.html:134
+msgid "Checkout"
+msgstr "Verifier un paiement"
+
+#: apps/shop/templates/index.html:64 apps/shop/templates/shop/base.html:51
+#: apps/shop/templates/shop/cart.html:53
+#: apps/shop/templates/shop/checkout.html:51
+#: apps/shop/templates/shop/shop.html:51
+#: apps/shop/templates/shop/single-product.html:51
+msgid "Login"
+msgstr "Se connecter"
+
+#: apps/shop/templates/index.html:66
+#, fuzzy
+#| msgid "Vendor contact"
+msgid "Vendor Admin"
+msgstr "Contact du vendeur"
+
+#: apps/shop/templates/index.html:70
+#: apps/vendors/templates/vendor/vendors.html:4
+msgid "Vendors"
+msgstr ""
+
+#: apps/shop/templates/index.html:72 apps/shop/templates/shop/base.html:60
+#: apps/shop/templates/shop/cart.html:62
+msgid "currency "
+msgstr "devise"
+
+#: apps/shop/templates/index.html:82
+#, fuzzy
+#| msgid "Latest Products"
+msgid "Categories of products"
+msgstr "Derniers Nouveautes"
+
+#: apps/shop/templates/index.html:93 apps/shop/templates/shop/base.html:74
+#: apps/shop/templates/shop/cart.html:71
+#: apps/shop/templates/shop/checkout.html:71
+#: apps/shop/templates/shop/shop.html:69
+#: apps/shop/templates/shop/single-product.html:69
+msgid "Choose language"
+msgstr "Choisir une langue"
+
+#: apps/shop/templates/index.html:142 apps/shop/templates/shop/base.html:117
+#: apps/shop/templates/shop/single-product.html:109
+#, fuzzy
+#| msgid "Cart"
+msgid "Cart "
+msgstr "Carte"
+
+#: apps/shop/templates/index.html:164 apps/shop/templates/shop/base.html:137
+#: apps/shop/templates/shop/cart.html:131
+#: apps/shop/templates/shop/checkout.html:132
+#: apps/shop/templates/shop/shop.html:141
+#: apps/shop/templates/shop/single-product.html:130
+#: apps/shop/templates/shop/single-product.html:217
+msgid "Home"
+msgstr "Acceuil"
+
+#: apps/shop/templates/index.html:165 apps/shop/templates/shop/base.html:138
+#: apps/shop/templates/shop/cart.html:132
+#: apps/shop/templates/shop/checkout.html:133
+#: apps/shop/templates/shop/shop.html:142
+#: apps/shop/templates/shop/single-product.html:131
+msgid "Shop page"
+msgstr "Ventes"
+
+#: apps/shop/templates/index.html:169 apps/shop/templates/shop/base.html:143
+#: apps/shop/templates/shop/cart.html:137
+#: apps/shop/templates/shop/checkout.html:138
+#: apps/shop/templates/shop/shop.html:148
+#: apps/shop/templates/shop/single-product.html:136
+msgid "Others"
+msgstr "Autres"
+
+#: apps/shop/templates/index.html:170 apps/shop/templates/shop/base.html:144
+#: apps/shop/templates/shop/cart.html:138
+msgid "Contact"
+msgstr "Contact"
+
+#: apps/shop/templates/index.html:185 apps/shop/templates/shop/cart.html:164
+#: apps/shop/templates/shop/checkout.html:165
+#: apps/shop/templates/shop/shop.html:121
+#: apps/shop/templates/shop/single-product.html:163
+#, fuzzy
+#| msgid "Single product"
+msgid "Search Products"
+msgstr "Recherche des articles"
+
+#: apps/shop/templates/index.html:205 apps/shop/templates/index.html:214
+#: apps/shop/templates/index.html:223 apps/shop/templates/index.html:232
+#: apps/shop/templates/shop/base.html:162
+#: apps/shop/templates/shop/base.html:171
+#: apps/shop/templates/shop/base.html:180
+#: apps/shop/templates/shop/base.html:189
+msgid "Shop now"
+msgstr "Aller a la boutique"
+
+#: apps/shop/templates/index.html:222 apps/shop/templates/shop/base.html:179
+msgid "Select Item"
+msgstr "Selectionner un article"
+
+#: apps/shop/templates/index.html:249 apps/shop/templates/shop/base.html:204
+msgid "30 Days return"
+msgstr "Retourner dans 30 jours"
+
+#: apps/shop/templates/index.html:255 apps/shop/templates/shop/base.html:210
+msgid "Free shipping"
+msgstr "Expedition gratuit"
+
+#: apps/shop/templates/index.html:261 apps/shop/templates/shop/base.html:216
+msgid "Secure payments"
+msgstr "Payements securises"
+
+#: apps/shop/templates/index.html:267 apps/shop/templates/shop/base.html:222
+#, fuzzy
+#| msgid "Single product"
+msgid "New products"
+msgstr "Nouveau Articles"
+
+#: apps/shop/templates/index.html:280 apps/shop/templates/shop/base.html:235
+msgid "Latest Products"
+msgstr "Derniers Nouveautes"
+
+#: apps/shop/templates/index.html:294 apps/shop/templates/index.html:308
+#: apps/shop/templates/index.html:323 apps/shop/templates/shop/base.html:242
+#: apps/shop/templates/shop/base.html:257
+#: apps/shop/templates/shop/base.html:271
+#: apps/shop/templates/shop/base.html:286
 #: apps/shop/templates/shop/single-product.html:303
 #: apps/shop/templates/shop/single-product.html:318
 #: apps/shop/templates/shop/single-product.html:332
@@ -211,73 +366,80 @@ msgstr "Ajouter au panier"
 msgid "See details"
 msgstr "details"
 
-#: apps/shop/templates/index.html:361
+#: apps/shop/templates/index.html:398 apps/shop/templates/shop/base.html:361
 msgid "Top Sellers"
 msgstr "Meilleurs vendeurs"
 
-#: apps/shop/templates/index.html:362 apps/shop/templates/index.html:410
-#: apps/shop/templates/index.html:458
+#: apps/shop/templates/index.html:399 apps/shop/templates/index.html:447
+#: apps/shop/templates/index.html:495 apps/shop/templates/shop/base.html:362
+#: apps/shop/templates/shop/base.html:410
+#: apps/shop/templates/shop/base.html:458
 msgid "View All"
 msgstr "Voir tout"
 
-#: apps/shop/templates/index.html:409
+#: apps/shop/templates/index.html:446 apps/shop/templates/shop/base.html:409
 msgid "Recently Viewed"
 msgstr "Vue recemement"
 
-#: apps/shop/templates/index.html:457
+#: apps/shop/templates/index.html:494 apps/shop/templates/shop/base.html:457
 msgid "Top New"
 msgstr "Nouveaute au top"
 
-#: apps/shop/templates/index.html:514 apps/shop/templates/shop/cart.html:610
-#: apps/shop/templates/shop/checkout.html:1021
-#: apps/shop/templates/shop/shop.html:378
-#: apps/shop/templates/shop/single-product.html:403
-msgid "Online business. Thhanks for trusting us. serving you is our motto!"
+#: apps/shop/templates/index.html:551 apps/shop/templates/shop/base.html:514
+#, fuzzy
+#| msgid "Online business. Thhanks for trusting us. serving you is our motto!"
+msgid "Online business. Thanks for trusting us. serving you is our motto!"
 msgstr ""
 "Commerce en ligne. Merci de nous faire confiance. Vous servir est notre "
 "devise"
 
-#: apps/shop/templates/index.html:526 apps/shop/templates/shop/cart.html:622
+#: apps/shop/templates/index.html:563 apps/shop/templates/shop/base.html:526
+#: apps/shop/templates/shop/cart.html:628
 #: apps/shop/templates/shop/checkout.html:1033
 #: apps/shop/templates/shop/checkout.html:1046
-#: apps/shop/templates/shop/shop.html:390
+#: apps/shop/templates/shop/shop.html:239
 #: apps/shop/templates/shop/single-product.html:415
 msgid "User Navigation"
 msgstr "Historique navigation"
 
-#: apps/shop/templates/index.html:529 apps/shop/templates/shop/cart.html:625
+#: apps/shop/templates/index.html:566 apps/shop/templates/shop/base.html:529
+#: apps/shop/templates/shop/cart.html:631
 #: apps/shop/templates/shop/checkout.html:1036
-#: apps/shop/templates/shop/shop.html:396
+#: apps/shop/templates/shop/shop.html:245
 #: apps/shop/templates/shop/single-product.html:418
 msgid "Order history"
 msgstr "Historique des ordres de payement"
 
-#: apps/shop/templates/index.html:531 apps/shop/templates/shop/cart.html:627
+#: apps/shop/templates/index.html:568 apps/shop/templates/shop/base.html:531
+#: apps/shop/templates/shop/cart.html:633
 #: apps/shop/templates/shop/checkout.html:1038
-#: apps/shop/templates/shop/shop.html:398
+#: apps/shop/templates/shop/shop.html:247
 #: apps/shop/templates/shop/single-product.html:420
 msgid "Vendor contact"
 msgstr "Contact du vendeur"
 
-#: apps/shop/templates/index.html:532 apps/shop/templates/shop/cart.html:628
+#: apps/shop/templates/index.html:569 apps/shop/templates/shop/base.html:532
+#: apps/shop/templates/shop/cart.html:634
 #: apps/shop/templates/shop/checkout.html:1039
-#: apps/shop/templates/shop/shop.html:399
+#: apps/shop/templates/shop/shop.html:248
 #: apps/shop/templates/shop/single-product.html:421
 #, fuzzy
 #| msgid "Shop page"
 msgid "Front page"
 msgstr "Ventes"
 
-#: apps/shop/templates/index.html:552 apps/shop/templates/shop/cart.html:648
+#: apps/shop/templates/index.html:589 apps/shop/templates/shop/base.html:552
+#: apps/shop/templates/shop/cart.html:654
 #: apps/shop/templates/shop/checkout.html:1059
-#: apps/shop/templates/shop/shop.html:419
+#: apps/shop/templates/shop/shop.html:268
 #: apps/shop/templates/shop/single-product.html:441
 msgid "Newsletter"
 msgstr "Boite de messagerie"
 
-#: apps/shop/templates/index.html:553 apps/shop/templates/shop/cart.html:649
+#: apps/shop/templates/index.html:590 apps/shop/templates/shop/base.html:553
+#: apps/shop/templates/shop/cart.html:655
 #: apps/shop/templates/shop/checkout.html:1060
-#: apps/shop/templates/shop/shop.html:420
+#: apps/shop/templates/shop/shop.html:269
 #: apps/shop/templates/shop/single-product.html:442
 msgid ""
 "Sign up to our newsletter and get exclusive deals you wont find anywhere "
@@ -287,21 +449,38 @@ msgstr ""
 "que vous n'aurrez nul part ailleursi non directement a votre boite de "
 "messagerie"
 
-#: apps/shop/templates/index.html:556 apps/shop/templates/shop/cart.html:652
+#: apps/shop/templates/index.html:593 apps/shop/templates/shop/base.html:556
+#: apps/shop/templates/shop/cart.html:658
 #: apps/shop/templates/shop/checkout.html:1062
-#: apps/shop/templates/shop/shop.html:422
+#: apps/shop/templates/shop/shop.html:271
 #: apps/shop/templates/shop/single-product.html:444
 #, fuzzy
 #| msgid "Username or email"
 msgid "Type your email"
 msgstr "Entrez votre adresse Email"
 
-#: apps/shop/templates/index.html:557 apps/shop/templates/shop/cart.html:653
+#: apps/shop/templates/index.html:594 apps/shop/templates/shop/base.html:557
+#: apps/shop/templates/shop/cart.html:659
 #: apps/shop/templates/shop/checkout.html:1063
-#: apps/shop/templates/shop/shop.html:423
+#: apps/shop/templates/shop/shop.html:272
 #: apps/shop/templates/shop/single-product.html:445
 msgid "Subscribe"
 msgstr "S'inscrire"
+
+#: apps/shop/templates/shop/base.html:139
+#: apps/shop/templates/shop/cart.html:133
+#: apps/shop/templates/shop/checkout.html:134
+#: apps/shop/templates/shop/single-product.html:132
+msgid "Single product"
+msgstr "Article"
+
+#: apps/shop/templates/shop/base.html:142
+#: apps/shop/templates/shop/cart.html:136
+#: apps/shop/templates/shop/checkout.html:137
+#: apps/shop/templates/shop/single-product.html:135
+#: apps/vendors/templates/vendor/add_product.html:12
+msgid "Category"
+msgstr "Categorie"
 
 #: apps/shop/templates/shop/cart.html:16
 msgid "Cart Page"
@@ -319,128 +498,110 @@ msgstr "Mon compte"
 msgid "Shopping Cart"
 msgstr "Carte pour achats"
 
-#: apps/shop/templates/shop/cart.html:164
-#: apps/shop/templates/shop/checkout.html:165
-#: apps/shop/templates/shop/single-product.html:163
-#, fuzzy
-#| msgid "Single product"
-msgid "Search Products"
-msgstr "Recherche des articles"
-
-#: apps/shop/templates/shop/cart.html:166
+#: apps/shop/templates/shop/cart.html:168
 #: apps/shop/templates/shop/single-product.html:165
 #, fuzzy
 #| msgid "Single product"
 msgid "Search products..."
 msgstr "Recherche des articles..."
 
-#: apps/shop/templates/shop/cart.html:167
-#: apps/shop/templates/shop/single-product.html:166
-msgid "Search"
-msgstr "Rechercher"
-
-#: apps/shop/templates/shop/cart.html:172
+#: apps/shop/templates/shop/cart.html:178
 #: apps/shop/templates/shop/checkout.html:173
 #: apps/shop/templates/shop/single-product.html:171
 msgid "Products"
 msgstr "Articles"
 
-#: apps/shop/templates/shop/cart.html:204
+#: apps/shop/templates/shop/cart.html:210
 msgid "Recent Posts"
 msgstr "Publication recente"
 
-#: apps/shop/templates/shop/cart.html:224
-#: apps/shop/templates/shop/checkout.html:928
-#: apps/shop/templates/shop/single-product.html:14
-msgid "Product"
-msgstr "Article"
-
-#: apps/shop/templates/shop/cart.html:225
-msgid "Price"
-msgstr "Prix"
-
-#: apps/shop/templates/shop/cart.html:226
-msgid "Quantity"
-msgstr "Quantite"
-
-#: apps/shop/templates/shop/cart.html:241
-#: apps/shop/templates/shop/cart.html:284
-#: apps/shop/templates/shop/cart.html:294
+#: apps/shop/templates/shop/cart.html:247
+#: apps/shop/templates/shop/cart.html:290
+#: apps/shop/templates/shop/cart.html:300
 #: apps/shop/templates/shop/checkout.html:935
 msgid "Ship Your Idea"
 msgstr "Partager"
 
-#: apps/shop/templates/shop/cart.html:264
+#: apps/shop/templates/shop/cart.html:270
 msgid "Coupon code"
 msgstr "code coupon"
 
-#: apps/shop/templates/shop/cart.html:265
+#: apps/shop/templates/shop/cart.html:271
 #: apps/shop/templates/shop/checkout.html:261
 msgid "Apply Coupon"
 msgstr "Valider le Coupon"
 
-#: apps/shop/templates/shop/cart.html:267
+#: apps/shop/templates/shop/cart.html:273
 msgid "Update Cart"
 msgstr "Mise a jour de la carte"
 
-#: apps/shop/templates/shop/cart.html:279
+#: apps/shop/templates/shop/cart.html:285
 msgid "You may be interested in..."
 msgstr "Ces articles peuvent vous interesser..."
 
-#: apps/shop/templates/shop/cart.html:288
-#: apps/shop/templates/shop/cart.html:298
+#: apps/shop/templates/shop/cart.html:294
+#: apps/shop/templates/shop/cart.html:304
 msgid "Select options"
 msgstr "Selectionner"
 
-#: apps/shop/templates/shop/cart.html:305
+#: apps/shop/templates/shop/cart.html:311
 #, fuzzy
 #| msgid "Cart Page"
 msgid "Cart Totals"
 msgstr "Total a payer"
 
-#: apps/shop/templates/shop/cart.html:310
+#: apps/shop/templates/shop/cart.html:316
 #: apps/shop/templates/shop/checkout.html:943
 msgid "Cart Subtotal"
 msgstr "sous-total"
 
-#: apps/shop/templates/shop/cart.html:315
+#: apps/shop/templates/shop/cart.html:321
 #: apps/shop/templates/shop/checkout.html:949
 msgid "Shipping and Handling"
 msgstr "Expedition"
 
-#: apps/shop/templates/shop/cart.html:316
+#: apps/shop/templates/shop/cart.html:322
 #: apps/shop/templates/shop/checkout.html:952
 msgid "Free Shipping"
 msgstr "Expedition gratuit"
 
-#: apps/shop/templates/shop/cart.html:320
+#: apps/shop/templates/shop/cart.html:326
 msgid "Order Total"
 msgstr "Ordorner a payer la totalite"
 
-#: apps/shop/templates/shop/cart.html:329
+#: apps/shop/templates/shop/cart.html:335
 msgid "Calculate Shipping"
 msgstr "Calculer les frais d'expedition"
 
-#: apps/shop/templates/shop/cart.html:335
+#: apps/shop/templates/shop/cart.html:341
 #: apps/shop/templates/shop/checkout.html:277
 msgid "Select a country…"
 msgstr "Selectionner un pays"
 
-#: apps/shop/templates/shop/cart.html:583
+#: apps/shop/templates/shop/cart.html:589
 #, fuzzy
 #| msgid "Select a country…"
 msgid "State / county"
 msgstr "Selectionner un pays"
 
-#: apps/shop/templates/shop/cart.html:585
+#: apps/shop/templates/shop/cart.html:591
 #, fuzzy
 #| msgid "Postcode"
 msgid "Postcode / Zip"
 msgstr "Code postal"
 
-#: apps/shop/templates/shop/cart.html:588
+#: apps/shop/templates/shop/cart.html:594
 msgid "Update Totals"
 msgstr "Mise a jour du montant total"
+
+#: apps/shop/templates/shop/cart.html:616
+#: apps/shop/templates/shop/checkout.html:1021
+#: apps/shop/templates/shop/shop.html:227
+#: apps/shop/templates/shop/single-product.html:403
+msgid "Online business. Thhanks for trusting us. serving you is our motto!"
+msgstr ""
+"Commerce en ligne. Merci de nous faire confiance. Vous servir est notre "
+"devise"
 
 #: apps/shop/templates/shop/checkout.html:60
 #: apps/shop/templates/shop/shop.html:60
@@ -464,6 +625,7 @@ msgid "Username or email"
 msgstr "Nom d'utilisateur ou adresse Email"
 
 #: apps/shop/templates/shop/checkout.html:233
+#: apps/vendors/templates/vendor/login.html:19
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -490,11 +652,6 @@ msgstr "Details Facture"
 msgid "Country"
 msgstr "Pays"
 
-#: apps/shop/templates/shop/checkout.html:526
-#: apps/shop/templates/shop/checkout.html:858
-msgid "First Name"
-msgstr "Nom"
-
 #: apps/shop/templates/shop/checkout.html:532
 #, fuzzy
 #| msgid "Category"
@@ -505,10 +662,6 @@ msgstr "Categorie"
 #: apps/shop/templates/shop/checkout.html:871
 msgid "Company Name"
 msgstr "Nom de l'entreprise"
-
-#: apps/shop/templates/shop/checkout.html:544
-msgid "Address"
-msgstr "Adresse"
 
 #: apps/shop/templates/shop/checkout.html:554
 #: apps/shop/templates/shop/checkout.html:886
@@ -613,7 +766,7 @@ msgstr ""
 "Payer a partir de PayPal; Vous pouvez payer avec votre carte si vous n'avez "
 "pas de compte Paypal"
 
-#: apps/shop/templates/shop/contact.html:5
+#: apps/shop/templates/shop/contact.html:8
 #, fuzzy
 #| msgid "Contact"
 msgid "Contact us"
@@ -625,6 +778,15 @@ msgstr "Nous contactez"
 msgid "Shop"
 msgstr "Aller a la boutique"
 
+#: apps/shop/templates/shop/shop.html:161
+msgid "Categories of product in the Shop"
+msgstr ""
+
+#: apps/shop/templates/shop/single-product.html:149
+#, fuzzy
+#| msgid "Shop now"
+msgid "Shop<"
+msgstr "Aller a la boutique"
 
 #: apps/shop/templates/shop/single-product.html:218
 #, fuzzy
@@ -640,10 +802,6 @@ msgstr "Critiques"
 #: apps/shop/templates/shop/single-product.html:262
 msgid "Product Description"
 msgstr "Description de l'article"
-
-#: apps/shop/templates/shop/single-product.html:270
-msgid "Name"
-msgstr "Nom"
 
 #: apps/shop/templates/shop/single-product.html:273
 #, fuzzy
@@ -664,3 +822,131 @@ msgstr "Article concerne"
 #: apps/shop/views.py:20
 msgid "informations about my cart"
 msgstr "Informations a propos de ma carte bancaire"
+
+#: apps/vendors/templates/vendor/add_product.html:3
+#, fuzzy
+#| msgid "Single product"
+msgid "Add product"
+msgstr "Ajouter un nouveau article "
+
+#: apps/vendors/templates/vendor/add_product.html:4
+#: apps/vendors/templates/vendor/vendor_admin.html:16
+#: apps/vendors/templates/vendor/vendor_admin.html:88
+#, fuzzy
+#| msgid "Single product"
+msgid "Add new product"
+msgstr "Ajouter un nouveau article "
+
+#: apps/vendors/templates/vendor/add_product.html:18
+#: apps/vendors/templates/vendor/vendor_admin.html:21
+#: apps/vendors/templates/vendor/vendor_admin.html:62
+#: apps/vendors/templates/vendor/vendor_admin.html:93
+msgid "Title"
+msgstr "Titre"
+
+#: apps/vendors/templates/vendor/add_product.html:44
+msgid "Cancel "
+msgstr "Annuler"
+
+#: apps/vendors/templates/vendor/add_product.html:47
+msgid "Save"
+msgstr "Enregistrer"
+
+#: apps/vendors/templates/vendor/become_vendor.html:4
+msgid "Become a vendor"
+msgstr "Creer un compte vendeur"
+
+
+
+#: apps/vendors/templates/vendor/become_vendor.html:21
+#: apps/vendors/templates/vendor/login.html:31
+msgid "Cancel"
+msgstr "Annuler"
+
+#: apps/vendors/templates/vendor/become_vendor.html:31
+msgid "already have an account"
+msgstr "Tu as deja un compte"
+
+#: apps/vendors/templates/vendor/edit_vendor.html:2
+#: apps/vendors/templates/vendor/edit_vendor.html:6
+msgid "Edit vendor"
+msgstr "Modifier vendeur"
+
+#: apps/vendors/templates/vendor/edit_vendor.html:9
+#, fuzzy
+#| msgid "Category"
+msgid "Vendor Name"
+msgstr "Nom du vendeur"
+
+#: apps/vendors/templates/vendor/edit_vendor.html:13
+msgid "This is not the same as the username"
+msgstr "Ce nom est different du nom d'utilisateur"
+
+#: apps/vendors/templates/vendor/edit_vendor.html:25
+msgid "Save changes"
+msgstr "Enregistrer"
+
+#: apps/vendors/templates/vendor/login.html:4
+#: apps/vendors/templates/vendor/login.html:9
+msgid "Log in"
+msgstr "Se connecter"
+
+#: apps/vendors/templates/vendor/login.html:13
+msgid "Name or login"
+msgstr "Nom ou login"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:4
+#: apps/vendors/templates/vendor/vendor_admin.html:7
+#, fuzzy
+#| msgid "Vendor contact"
+msgid "Vendor admin"
+msgstr "Vendeur"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:8
+msgid "My balance"
+msgstr "Balance de mon compte"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:9
+#, fuzzy
+#| msgid "My Account"
+msgid "My paid amount"
+msgstr "Mon montant a payer"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:11
+msgid "Edit"
+msgstr "Modifier"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:12
+msgid "Log out"
+msgstr "Se deconnecter"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:15
+#, fuzzy
+#| msgid "Single product"
+msgid "My products"
+msgstr "Nouveau Articles"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:39
+#: apps/vendors/templates/vendor/vendor_admin.html:111
+msgid "You don't have any product yet"
+msgstr "Vous n'avez pas encore de produit"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:44
+#, fuzzy
+#| msgid "Your review"
+msgid "My orders"
+msgstr "Votre payeur"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:56
+msgid "Zip and place"
+msgstr "Code zip et Lieu"
+
+#: apps/vendors/templates/vendor/vendor_admin.html:64
+msgid "Paid"
+msgstr "Paye"
+
+#: apps/vendors/templates/vendor/vendors.html:13
+#, fuzzy
+#| msgid "View All"
+msgid "View"
+msgstr "Voir tout"

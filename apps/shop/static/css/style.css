@@ -1135,33 +1135,53 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
         bottom: -100%;
     }
 }
-.notification.is-toast{
-
+[class*="notification"]{
     position: fixed;
     bottom: 100%;
     right: 50px;
     animation-name: show-toast;
     animation-duration: 4s;
+    background-color:#f1f1f1;
+    color:#0c4128;
+    border: 2px #6a1a21;
 
 
 }
-div.row{
-     display: block;
-    text-align: center;
-}
+
 .row{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
+
 }
-div.box{
-    display: block;
-    text-align: center;
-}
+
 .box{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    text-align: center;
+}
+
+.form-horizontal{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+[class*="con"]{
+            padding: 1rem;
+
+            border: 2px  #f1f1f1;
+
+            text-align: center;
+        }
+
+.container-md{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-bottom: 1px solid #ddd;
+    list-style: outside none none;
+
 }

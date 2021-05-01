@@ -4,13 +4,30 @@
 
 {% block title %}Search{% endblock %}
 {% block content %}
-        <div class="columns is-multiline mb-6">
-            <div class="column is-12 has-text-centered mt-6 mb-6">
-                <h2 class="is-size-3">Search </h2>
-                <h3>Search terms : {{ query }}</h3>
-            </div>
+    <style>
+        [class*="col"]{
+            padding: 1rem;
+
+            border: 2px  #fff3cd;
+            color: #fff;
+            text-align: center;
+        }
+        [class*="con"]{
+            padding: 1rem;
+
+            text-align: center;
+        }
+    </style>
+
+        <div class="container-md">
+            <div class="row">
+                <div class="column is-12 has-text-centered mt-6 mb-6">
+                    <h2 class="is-size-3">{% trans 'Search' %} </h2>
+                    <h3>{% trans 'Search terms' %} : {{ query }}</h3>
+                </div>
             {% for product in products%}
                   {% include 'product/parts/list_items.html' %}
             {% endfor %}
+            </div>
         </div>
 {% endblock %}

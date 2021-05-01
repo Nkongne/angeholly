@@ -37,18 +37,19 @@
     <![endif]-->
   </head>
   <body>
-   
+   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <div class="user-menu">
-                        <ul>
+
+                       <ul class="navbar-nav">
                             <li><a href="#"><i class="fa fa-user"></i> {% trans "My Account" %}</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> {% trans "Wishlist" %}</a></li>
                             <li><a href="{% url 'shop:cart' %}"><i class="fa fa-user"></i> {% trans "My Cart" %}</a></li>
                             <li><a href="{% url 'shop:checkout' %}"><i class="fa fa-user"></i> {% trans "Checkout" %}</a></li>
-                            <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> {% trans "Login" %}Login</a></li>
+                            <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> {% trans "Login" %}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,36 +66,35 @@
                                 </ul>
                             </li>
 
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key"></span><span class="value">{% trans 'Choose language' %}</span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <div class="uk-flex">
+                             <li class= "dropdown">
+                                    <a data-toggle="dropdown" data-hover="dropdown" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#"><i class="fa fa-language"></i><span class="key"></span><span class="value">{% trans 'Choose language' %}</span><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                              <div class="uk-flex">
 
-                                        {% get_current_language as LANGUAGE_CODE %}
-                                        {% get_available_languages as LANGUAGES %}
-                                        {% get_language_info_list for LANGUAGES as languages %}
-                                        <div class="languages">
+                                                    {% get_current_language as LANGUAGE_CODE %}
+                                                    {% get_available_languages as LANGUAGES %}
+                                                    {% get_language_info_list for LANGUAGES as languages %}
+                                                    <div class="languages">
+                                                        <ul class="languages">
+                                                            {% for language in languages %}
+                                                                <button><a class="dropdown-item" type="button"  href="/{{ language.code }}/{{ request.get_full_path |slice:'1:'}}" {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
+                                                                    {{ language.name_local }}
+                                                                </a></button>
+                                                            {% endfor %}
+                                                        </ul>
+                                                   </div>
+                                              </div>
+                                    </ul>
 
-                                            <ul class="languages">
-                                            {% for language in languages %}
-                                                <li>
-                                                    <a href="/{{ language.code }}/{{ request.get_full_path |slice:'1:'}}" {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
-                                                    {{ language.name_local }}
-                                                    </a>
-                                                </li>
-                                            {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
+                                </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
     </div> <!-- End header area -->
-    
+   </nav>
     <div class="site-branding-area">
         <div class="container">
             <div class="row">
@@ -106,13 +106,25 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="{% url 'shop:cart' %}">{% trans  "Cart" %}- <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="{% url 'shop:cart' %}">{% trans  "Cart" %}- <span class="cart-amunt">{% if cart %}({{ cart.get_total_cost }} FCFA){% endif %}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{% if cart %}({{ cart|length }}){% endif %}</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </div> <!-- End site branding area -->
-    
+    <div class="container-md">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="single-sidebar">
+
+                          <form method="get" action="{% url 'search' %}">
+                              <p class="sidebar-title">{%trans 'Search Products'%}</p> <input type="text" class="input" placeholder="Search..."name="query">
+                              <input type="submit" value="search">
+                        </form>
+            </div>
+         </div>
+    </div>
+</div>
     <div class="mainmenu-area">
         <div class="container">
             <div class="row">
@@ -128,10 +140,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{% url 'shop:home' %}">{% trans "Home" %}</a></li>
                         <li class="active"><a href="{% url 'shop:shoping' %}">{% trans "Shop page" %}</a></li>
-                        <li><a href="{% url 'shop:singleproduct' %}">{% trans "Single product" %}</a></li>
+
                         <li><a href="{% url 'shop:cart' %}">{% trans "Cart" %}</a></li>
                         <li><a href="{% url 'shop:checkout' %}">{% trans "Checkout" %}</a></li>
-                        <li><a href="#">{% trans "Category" %}</a></li>
+
+
                         <li><a href="#">{%  trans "Others"%}</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -145,200 +158,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
+                        <h2>{% trans 'Categories of product in the Shop' %}</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
+
     
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
-        <div class="container">
+        <div class="container-md">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-2.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
+                <div class="col-md-12">
+
+                      {% for category in menu_categories %}
+
+                            <div class="single-shop-product">
+                                <ul class="primary">
+
+                                          <li class="btn-lg btn-success"><a style="color: #f8f9fa" href="{% url 'category' category.slug %}">{{category.title}}</a></li>
+                                    </ul>
+
                     </div>
+
+                    {% endfor %}
+
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-1.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-3.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-4.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-2.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-1.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-3.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-4.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-2.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-1.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-3.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="../../static/img/product-4.jpg" alt="">
-                        </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">{% trans "Add to cart" %}</a>
-                        </div>                       
-                    </div>
-                </div>
-            </div>
-            
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-pagination text-center">
@@ -360,7 +209,7 @@
                               </a>
                             </li>
                           </ul>
-                        </nav>                        
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -374,7 +223,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        < <h2>A<span>ngeHello</span></h2>
+                        <h2>A<span>ngeHello</span></h2>
                         <p>{% trans "Online business. Thhanks for trusting us. serving you is our motto!"%}</p>
                         <div class="footer-social">
                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>

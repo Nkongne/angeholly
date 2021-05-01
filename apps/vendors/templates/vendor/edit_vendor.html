@@ -1,28 +1,32 @@
 {% extends 'index.html' %}
-{% block title %}Edit vendor{% endblock %}
+{% block title %}{% trans 'Edit vendor' %}{% endblock %}
 {% block vendor %}
-    <h1 class="title">Edit vendor</h1>
-    <form method="post" action=".">{% csrf_token %}
-    <div class="field">
-        <label>Vendor Name</label>
-        <div class="control-label">
-            <input type="text" name="name" id="id_name" value="{{ vendor.nom }}"class="input">
-        </div>
-        <p class="help">This is not the same as the username!</p>
-    </div>
-    <div class="field">
-        <label>Email</label>
-        <div class="control-label">
-            <input type="email" name="email" id="id_email" value="{{ vendor.cree_par }}"class="input">
-        </div>
+        <div class="container-md">
+        <div class="row ">
+            <h1 class="title">{% trans 'Edit vendor' %}</h1>
+            <form method="post" action=".">{% csrf_token %}
+                    <div class="field">
+                        <label class="col-md-8" >{% trans 'Vendor Name' %}</label>
+                        <div class="col-md-4">
+                            <input type="text" name="name" id="id_name" value="{{ vendor.nom }}"class="input">
+                        </div>
+                        <p class="help">{% trans 'This is not the same as the username' %}!</p>
+                    </div>
+                <div class="field">
+                    <label class="col-md-8">Email</label>
+                    <div class="col-md-4">
+                        <input type="email" name="email" id="id_email" value="{{ vendor.cree_par }}"class="input">
+                    </div>
 
-    </div>
-    <div class="field">
+                </div>
+                <div class="field">
 
-        <div class="control-label">
-            <button class="button is-dark is-uppercase">Save changes</button>
+                    <div class="control-label">
+                        <button type="button" class="btn btn-success is-uppercase">{% trans 'Save changes' %}</button>
+                    </div>
+
+                </div>
+            </form>
         </div>
-
-    </div>
-    </form>
+        </div>
 {% endblock %}

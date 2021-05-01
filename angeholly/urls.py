@@ -21,11 +21,11 @@ from django.urls import path,include
 admin.autodiscover()
 
 urlpatterns = [
-    path('', include('apps.product.urls'),name='product'),
+    path('', include('apps.product.urls')),
     path('admin/', admin.site.urls),
-    path('', include('apps.vendors.urls'), name='vendors'),
-    path('', include('apps.cart.urls'), name='cart'),
-    path('', include('apps.shop.urls'),name='shop')
+    path('', include('apps.vendors.urls')),
+    path('', include('apps.cart.urls')),
+    path('', include('apps.shop.urls'))
 
 
 

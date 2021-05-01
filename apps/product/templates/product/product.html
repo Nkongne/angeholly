@@ -3,32 +3,38 @@
 {% load i18n %}
 {% block title %}{{product.title }}{% endblock %}
 {% block content %}
+
+    <div class="container-md">
     {% if product.image %}
         <figure class="image is-4by3 mb-6">
-            <img src="{{ product.image.url }}">
+            <img  src="{{ product.image.url }}">
         </figure>
     {% endif %}
-    <h1 class="title">{% trans 'Name' %}:{{ product.title }}Price:{{ product.price }}</h1>
-    <p class="mb-6"><span class="tag is-dark">Vendor:{{ product.vendor.nom }}</span> </p>
-    <p>{% trans 'Description' %} :{{ product.description }}</p>
+    <hr>
+        <h1 class="title display-1">{% trans 'Name' %}: {{ product.title }}</h1>
+<hr>
+        <h1>Price:{{ product.price }} FCFA</h1>
+    <hr>
+    <p class="mb-6"><span class="tag is-dark">{% trans 'Vendor' %}: {{ product.vendor.nom }}</span> </p>
+    <hr>
+    <p>{% trans 'Description' %} : {{ product.description }}</p>
     <hr>
     {% if messages %}
         {% for message in messages %}
             <div class="notification is-success is-toast">
-                {{ message }}
+           <button type="button" class="button btn-success btn-lg" >{{ message }}</button>
             </div>
         {% endfor %}
 
     {% endif %}
-
+<form role="form" method="post" action="." >
     {% csrf_token %}
         <div class="field has-addons">
             <div class="control">
                 <input type="number"name="quantity" value="1" class="input" min="1" >
-
             </div>
             <div class="control">
-                <button class="button is-dark">{% trans 'Add to cart' %}</button>
+                <button type="submit" class="button btn-success btn-lg">{% trans 'Add to cart' %}</button>
             </div>
         </div>
 
@@ -37,10 +43,13 @@
     {% if similar_products %}
         <hr>
             <div class="column is-multiline">
-                <div class="subtitle">{% trans 'Similar products' %}: </div>
+                <div class="col-md-12">
+                <h2 class="subtitle">{% trans 'Similar products' %}: </h2>
+                </div>
                 {% for s in similar_products %}
                     {% include 'product/parts/list_items.html' %}
                 {% endfor %}
             </div>
     {% endif %}
+    </div>
 {% endblock %}

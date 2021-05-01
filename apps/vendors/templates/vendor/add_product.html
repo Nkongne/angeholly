@@ -1,32 +1,32 @@
 {% extends 'index.html' %}
 {% load i18n %}
 {% block title %}{% trans 'Add product' %}{% endblock %}
-{% block product%}<h1> {% trans 'Add new product' %} </h1>
+{% block content%}<h1> {% trans 'Add new product' %} </h1>
 
     <div class="row">
     <div class="col-sm-5" style="background:#eaeaea">
     <div class="panel-body">
 
- <form class="form-horizontal" role="form" method="POST" id="af" action="." enctype="multipart/form-data">{% csrf_token %}
+         <form class="form-horizontal" role="form" method="POST" id="af" action="." enctype="multipart/form-data">{% csrf_token %}
         <div class="form-group">
-            <label for="montant" class="col-lg-2 col-sm-2 control-label">Category:</label>
+            <label for="montant" class="col-lg-2 col-sm-2 control-label">{% trans 'Category' %}:</label>
             <div class="col-lg-10">
             {{form.category}}
            </div>
         </div>
          <div class="form-group">
-            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">Title:</label>
+            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">{% trans 'Title' %}:</label>
             <div class="col-lg-10">
             {{form.title}}
            </div>
            </div>
               <div class="form-group">
-            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">Description:</label>
+            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">{% trans 'Description' %}:</label>
             <div class="col-lg-10">
             {{form.description}}
            </div>
                   <div class="form-group">
-            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">Price:</label>
+            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">{% trans 'Price' %}:</label>
             <div class="col-lg-10">
             {{form.price}}
            </div>
@@ -41,10 +41,10 @@
                   <div class="form-group">
              <div class="col-lg-2 col-sm-2 ">
 
-                <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler <span class="glyphicon glyphicon-backward"></span></button>
+                <button type="button" class="btn btn-danger" onclick="window.history.back()">{% trans 'Cancel ' %}<span class="glyphicon glyphicon-backward"></span></button>
              </div>
                       <div class="col-lg-10">
-                <button type="submit" class="btn-success">Enregistrer <span class="glyphicon glyphicon-save"></span></button>
+                <button type="submit" class="btn-success">{% trans 'Save' %} <span class="glyphicon glyphicon-save"></span></button>
                     </div>
                   </div>
         </div>

@@ -8,6 +8,6 @@
                     <h2 class="subtitle">{{ product.title  }}</h2>
                     <h3 class="price is-size- mb-5"> {{ product.price }}FCFA</h3>
                     <hr>
-                        <a href="{% url 'product' product.category.slug product.slug %}" class="btn-success">{% trans 'view detail' %} </a>
+                        <a href="{% url 'product' product.category.slug product.slug %}" ><button type="button" class="btn btn-success"> {% trans 'view detail' %} </button></a>
                 </div>
             </div>

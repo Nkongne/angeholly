@@ -2,29 +2,37 @@
 {% load static %}
 {% load i18n %}
 {% block title %}{% trans 'Log in' %}{% endblock %}
-{% block content%}<h1> {% trans 'Log in' %} </h1>
- <form class="form-horizontal" role="form" method="POST" id="af" action="."> {% csrf_token %}
+{% block content%}
 
-        <div class="form-group">
-            <label for="montant" class="col-lg-2 col-sm-2 control-label">Nom ou login:</label>
-            <div class="col-lg-10">
-            {{form.username}}
-           </div>
+    <div class="container-md">
+        <div class="row ">
+            <h1> {% trans 'Log in' %} </h1>
+            <form class="form-horizontal" role="form" method="POST" id="af" action="."> {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="montant" class="col-md-4  control-label">{% trans 'Name or login' %}:</label>
+                    <div class="col-md-2">
+                        {{form.username}}
+                   </div>
+                </div>
+                 <div class="form-group">
+                    <label for="type_ticket" class="col-md-4 control-label">{% trans 'Password' %}:</label>
+                    <div class="col-md-2">
+                        {{form.password}}
+                   </div>
+                 </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <input  type="submit" value="Log in" class="btn btn-success"/>
+                    </div>
+                    <div class="col-md-4">
+                        <button  type="button" class="btn btn-danger" onclick="window.history.back()">{% trans 'Cancel' %} </button>
+                    </div>
+                </div>
+
+            </form>
         </div>
-         <div class="form-group">
-            <label for="type_ticket" class="col-lg-2 col-sm-2 control-label">mot de passe:</label>
-            <div class="col-lg-10">
-            {{form.password}}
-           </div>
-           </div>
-
-        </div>
-        <div class="form-group">
-        <input type="submit" value="Log in" class="btn btn-success"/>
-        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
-        </div>
-
- </form>
-
-
+</div>
 {% endblock %}
