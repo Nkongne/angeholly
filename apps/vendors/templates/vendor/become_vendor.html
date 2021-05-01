@@ -2,29 +2,36 @@
 {% load static %}
 {% load i18n %}
 {% block title %}{% trans 'Become a vendor' %}{% endblock %}
-{% block vendor%}<h1> {% trans 'Become vendor' %} </h1>
- <form class="form-horizontal" role="form" method="POST" id="af" action=".">{% csrf_token %}
+{% block content%}
+     <div class="container-md">
+        <div class="row ">
+          <h1> {% trans 'Become vendor' %} </h1>
+             <form class="form-horizontal" role="form" method="POST" id="af" action=".">{% csrf_token %}
 
-        <div class="form-group">
+                    <div class="form-group">
 
-            <div class="col-lg-10">
-            {{form.as_p}}
-           </div>
+                        <div class="col-lg-10">
+                        {{form.as_p}}
+                       </div>
 
-      <div class="col-lg-10">
-        <input type="submit" value="Enregistrer" class="btn btn-success"/>
-        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+                  <div class="col-md-4">
+                    <input type="submit" value="Enregistrer" class="btn btn-success"/>
+                  </div>
+                      <div class="col-md-4">
+                    <button type="button" class="btn btn-danger" onclick="window.history.back()">{% trans 'Cancel' %} </button>
+                    </div>
+
+                     </div>
+
+                </form>
+                <hr>
+                <div class="form-group">
+
+                        <div class="col-lg-10">
+                    <h2 class="subtitle">  {% trans 'already have an account' %} ? <a href="{% url 'login' %}"><button type="button" class="btn btn-warning btn-lg">Login</button></a></h2>
+
+                        </div>
+                </div>
         </div>
-
-         </div>
-
-    </form>
-    <hr>
-    <div class="form-group">
-
-            <div class="col-lg-10">
-        <h2 class="subtitle">  already have an account ? </h2>
-        <a href="{% url 'login' %}">Login</a>
-            </div>
-    </div>
+     </div>
 {% endblock %}
