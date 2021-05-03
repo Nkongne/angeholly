@@ -13,7 +13,7 @@
     </div>
     <div class="box" style="background:azure">
         <h2 class="is-size-3 mb-4">{% trans 'My products' %}</h2>
-         <a href="{% url 'add_product' %}"><button type="button" class="btn btn-danger">{%  trans 'Add new product' %}</button></a>
+
         {% if products %}
             <table class="table is-fullwidth">
                 <thead >
@@ -35,6 +35,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="{% url 'add_product' %}"><button type="button" class="btn btn-danger">{%  trans 'Add new product' %}</button></a>
         {% else %}
             <p> {% trans "You don't have any product yet" %}...</p>
         {% endif %}
@@ -85,7 +86,7 @@
             </div>
         {% endfor %}
     {% endif %}
-       <a href="{% url 'add_product' %}"  ><button type="button" class="btn btn-success">{% trans 'Add new product' %}</button></a>
+
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
@@ -107,8 +108,10 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="{% url 'add_product' %}"  ><button type="button" class="btn btn-success">{% trans 'Add new product' %}</button></a>
         {% else %}
             <p> {% trans "You don't have any product yet" %}...</p>
         {% endif %}
+
     </div>
 {% endblock %}
