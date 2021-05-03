@@ -25,7 +25,7 @@ SECRET_KEY = '^ps#l1!&(g6tqfu2nda26l^n1r!x+28)6$f#@6m)h+en%7^h-j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['angeholly.herokuapp.com']
 
 STRIPE_PUB_KEY = 'pk_test_51Igjh5COYGHkJKs11TGd0VGWKGrTklhXX98Eb0p2EGMCEqNc4V1S7YH34n3wLgkdW8jQj8joopmobEez2GsQEHkO00m2DjyenW'
 STRIPE_SECRET_KEY = 'sk_test_51Igjh5COYGHkJKs1yTXlCcrvhL5Jbkpnl y0BeZfYRsWMeuiCCeIq4p9WnVedsSNNnV2i7fPefW8HJGwQr94uOS5J00eB6dXXnS'
