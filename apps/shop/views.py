@@ -18,7 +18,7 @@ def index(request):
     return HttpResponse(render(request, 'index.html'))
 def customercart(request):
     infos= _("informations about my cart")
-    return HttpResponse(render(request, 'shop/cart.html',{'infos':infos}))
+    return HttpResponse(render(request, 'shop/carte.html', {'infos':infos}))
 def singleproduct(request):
     return HttpResponse(render(request,'shop/single-product.html'))
 def shoping(request):

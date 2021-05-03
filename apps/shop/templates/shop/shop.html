@@ -47,7 +47,7 @@
                        <ul class="navbar-nav">
                             <li><a href="#"><i class="fa fa-user"></i> {% trans "My Account" %}</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> {% trans "Wishlist" %}</a></li>
-                            <li><a href="{% url 'shop:cart' %}"><i class="fa fa-user"></i> {% trans "My Cart" %}</a></li>
+                            <li><a href="{% url 'cart' %}"><i class="fa fa-user"></i> {% trans "My Cart" %}</a></li>
                             <li><a href="{% url 'shop:checkout' %}"><i class="fa fa-user"></i> {% trans "Checkout" %}</a></li>
                             <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> {% trans "Login" %}</a></li>
                         </ul>
@@ -106,7 +106,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="{% url 'shop:cart' %}">{% trans  "Cart" %}- <span class="cart-amunt">{% if cart %}({{ cart.get_total_cost }} FCFA){% endif %}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{% if cart %}({{ cart|length }}){% endif %}</span></a>
+                        <a href="{% url 'cart' %}">{% trans  "Cart" %}- <span class="cart-amunt">{% if cart %}({{ cart.get_total_cost }} FCFA){% endif %}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{% if cart %}({{ cart|length }}){% endif %}</span></a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                         <li><a href="{% url 'shop:home' %}">{% trans "Home" %}</a></li>
                         <li class="active"><a href="{% url 'shop:shoping' %}">{% trans "Shop page" %}</a></li>
 
-                        <li><a href="{% url 'shop:cart' %}">{% trans "Cart" %}</a></li>
+                        <li><a href="{% url 'cart' %}">{% trans "Cart" %}</a></li>
                         <li><a href="{% url 'shop:checkout' %}">{% trans "Checkout" %}</a></li>
 
 
@@ -295,6 +295,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
    
     <!-- Latest jQuery form server -->

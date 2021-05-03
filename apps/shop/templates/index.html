@@ -35,9 +35,9 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
+<script src="https://js.stripe.com/v3/"></script>
+ {% block scripts %}{% endblock %}
 
-
-    <script src="https://js.stripe.com/v3/"></script>
    <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
 
         <script src="{% static  'css/bootstrap/js/bootstrap.js' %}"></script>
@@ -58,9 +58,9 @@
                             <ul class="navbar-nav">
                                 <li><a href="{% url 'vendor_admin' %}"><i class="fa fa-user"></i> {% trans "My account" %}</a></li>
                                 <li><a href="#"><i class="fa fa-heart"></i>{% trans "Wishlist" %} </a></li>
-                                <li><a href="{% url 'shop:cart' %}"><i class="fa fa-user">{% trans "My Cart" %}</i> </a></li>
+
                                 <li><a href="{% url 'cart' %}"><i class="fa fa-user">{% trans "carte" %}{% if cart %}({{ cart|length }}){% endif %}</i> </a></li>
-                                <li><a href="{% url 'shop:checkout' %}"><i class="fa fa-user"></i> {% trans "Checkout" %}</a></li>
+
                                 <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> {% trans "Login" %}</a></li>
                                 {% if request.user.is_authenticated %}
                                      <li><a href="{% url 'vendor_admin' %}"><i class="fa fa-user"></i> {% trans "Vendor Admin" %}</a></li>
@@ -127,7 +127,7 @@
      <!-- End header area -->
 
 
-    {% block scripts %}{% endblock %}
+
     <div class="site-branding-area">
         <div class="container-md">
             <div class="row">
@@ -139,7 +139,7 @@
                 
                 <div class="col-md-offset-8">
                     <div class="shopping-item">
-                        <a href="{% url 'shop:cart' %}"> {% trans "Cart " %}- <span class="cart-amunt">{% if cart %}({{ cart.get_total_cost }}FCFA){% endif %}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{% if cart %}({{ cart|length }}){% endif %}</span></a>
+                        <a href="{% url 'cart' %}"> {% trans "Cart " %}- <span class="cart-amunt">{% if cart %}({{ cart.get_total_cost }}FCFA){% endif %}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{% if cart %}({{ cart|length }}){% endif %}</span></a>
                     </div>
                 </div>
             </div>
@@ -164,8 +164,8 @@
                         <li class="active"><a href="{% url 'shop:home'%}">{% trans "Home" %}</a></li>
                         <li><a href="{% url 'shop:shoping'%}">{% trans "Shop page" %}</a></li>
 
-                        <li><a href="{% url 'shop:cart' %}">{% trans "Cart" %}</a></li>
-                        <li><a href="{% url 'shop:checkout'%}">{% trans "Checkout" %}</a></li>
+                        <li><a href="{% url 'cart' %}">{% trans "Cart" %}</a></li>
+
                         <li><a href="#">{% trans "Others" %}</a></li>
                         <li><a href="{% url 'shop:contact'%}">{% trans "Contact" %}</a></li>
                     </ul>
@@ -620,10 +620,10 @@
             </div>
         </div>
     </div> <!-- End footer bottom area -->
-   
+</div>
 
 
-
+    <script src="https://js.stripe.com/v3/"></script>
 
    <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
     <!-- jQuery sticky menu -->
