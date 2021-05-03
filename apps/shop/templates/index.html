@@ -35,13 +35,14 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-<script src="https://js.stripe.com/v3/"></script>
- {% block scripts %}{% endblock %}
+
+
 
    <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
 
         <script src="{% static  'css/bootstrap/js/bootstrap.js' %}"></script>
-
+        <script src="https://js.stripe.com/v3/"></script>
+{% block scripts %}{% endblock %}
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -622,10 +623,6 @@
     </div> <!-- End footer bottom area -->
 </div>
 
-
-    <script src="https://js.stripe.com/v3/"></script>
-
-   <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
     <!-- jQuery sticky menu -->
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/jquery.sticky.js' %}"></script>
@@ -640,11 +637,8 @@
     <script type="text/javascript" src="{% static 'js/bxslider.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/script.slider.js' %}"></script>
 
-  <!-- Latest jQuery form server -->
-    <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
 
-    <!-- Bootstrap JS form CDN -->
-    <script src="{% static 'css/bootstrap/js/bootstrap.js' %}"></script>
+
 
 
     <!-- Slider -->

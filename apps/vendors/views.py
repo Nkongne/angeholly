@@ -14,7 +14,7 @@ def become_vendor(request):
             user=form.save()
             login(request,user)
             vendor=Vendor.objects.create(nom=user.username,cree_par=user)
-            return redirect('shop:frontpage')
+            return redirect('shop:home')
     else:
         form=UserCreationForm()
     return render(request,'vendor/become_vendor.html',{'form':form})
