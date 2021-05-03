@@ -1,1 +1,1 @@
-web: gunicorn angeHolly.wsgi
+web: gunicorn angeholly.wsgi
